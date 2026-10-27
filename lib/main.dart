@@ -127,6 +127,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
               child: GestureDetector(
                 onTap: _flip,
                 child: FlipCard(
+                  // A new key per card makes the next car start on its photo
+                  // side instead of animating back and revealing its name.
+                  key: ValueKey(_index),
                   flipped: _flipped,
                   front: _CardFront(car: car),
                   back: _CardBack(car: car),
